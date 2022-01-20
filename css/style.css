@@ -1,0 +1,956 @@
+@charset "UTF-8";
+/*
+Template Name: Samir's Library
+Template URI: http://www.samirslibrary.com
+Author: Samir Kumar Roy
+Author URI: http://www.samir.com
+Version: 1.0.0
+*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Tahoma, sans-serif;
+  padding: 0;
+  background-color: #F1F1F1;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+.container{
+  width: 100%;
+  padding: 30px 50px;
+}
+.header{
+  /* position: fixed;
+  z-index: 100; */
+  height: 130px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0,0,0,0.8);
+}
+.logo-section{
+  background-color: #f1f1f1;
+  padding: 5px;
+
+}
+.top-nav{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.top-nav-item:first-child{
+  width: 20%;
+  font-size: 18px;
+  transition: 0.5s;
+
+}
+.top-nav-item:first-child:hover{
+
+  font-size: 20px;
+
+}
+.top-nav-item:first-child span{
+  margin-right: 10px;
+
+}
+
+.top-nav-item:nth-child(2){
+  width: 40%;
+}
+.top-nav-item:last-child{
+  width: 40%;
+  margin-left: 40px;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+.top-nav-item:last-child > a{
+  color: #f1f1f1;
+}
+.top-nav-item:nth-child(2) form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.top-nav-item:nth-child(2) form button{
+  font-size: 20px;
+}
+.top-nav-item i{
+  font-size: 20px;
+  padding: 2px;
+}
+.top-nav-item button{
+  cursor: pointer;
+  height: 29px;
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+}
+.top-nav-item button:hover{
+  border: 1px solid orange;
+}
+.top-nav-item input{
+  height: 30px;
+  width: 70%;
+}
+.top-nav-item input::placeholder{
+  text-align: center;
+  font-size: 16px;
+}
+.top-nav-item input:focus{
+  outline: 1px solid orange;
+}
+.main-nav ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main-nav ul li{
+  margin: 7px 40px;
+
+}
+#admin_header .main-nav ul li{
+  margin: 5px 15px;
+}
+.main-nav ul li a{
+  font-size: 18px;
+  color: white;
+  padding: 0 5px 5px 5px;
+
+}
+.main-nav ul li a:hover{
+  color: white;
+  border-bottom: 2px solid #949996;
+  padding: 5px;
+  border-top: 2px solid #949996;
+}
+.banner{
+  margin: 5px 0;
+  height: 60vh;
+}
+.banner-home{
+  background-image: url("../images/page-banners/banner-home.jpg");
+}
+#notice{
+  background-color: rgba(233, 215, 158, 0.89);
+  width: 65%;
+  margin: auto;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+
+}
+#notice > div:first-child h2{
+  border-bottom: 3px dotted rgb(67, 160, 67);
+  padding-bottom: 3px;
+  width: fit-content;
+  margin: auto;
+}
+#notice > div p{
+  margin: 15px;
+  color: rgb(27, 27, 27);
+  font-size: 20px;
+}
+#notice > div p i{
+  font-size: 28px;
+  color: #bd4135;
+  cursor: pointer;
+}
+#notice > div p i:hover{
+  font-size: 28px;
+  color: #a7271b;
+}
+.banner-catalogue{
+  background-image: url("../images/page-banners/services-banner.jpg");
+}
+.books{
+
+}
+.books h3{
+  margin-top: 30PX;
+  font-size: 32PX;
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #5fa311;
+}
+.book-list{
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-between;
+  row-gap: 15px; 
+  align-items:center;
+}
+.book-list a{
+  display: block;
+  position: relative;
+  width: 15%;
+  height: 300px;
+}
+.single-book{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 2px #84BB45;
+}
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 15,0.9);
+  height: 300px;
+  width: 100%;
+  color: #f1f1f1;
+  transition: 0.4s;
+}
+.mask .mask-content{
+  position: absolute;
+  height: 50px;
+  width: fit-content;
+  top: 35%;
+  left: 30%;
+  font-size: 24px;
+}
+.mask .mask-content h5{
+  text-align: center;
+  margin-bottom: 12px;
+  
+}
+.single-book:hover .mask{
+  display: block;
+  
+}
+.single-book img{
+  height: 100%;
+  width: 100%;
+}
+footer{
+  background-color: rgba(0,0,0,0.8);
+  color: #f1f1f1;
+}
+.footer-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-content > ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+footer a{
+  color: #f1f1f1;
+  font-size: 18px;
+}
+.social-links{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.social-links ul{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+}
+.social-links a{
+  background-color: #f1f1f1;
+  border: 1px transparent;
+  border-radius: 50%;
+  font-size: 28px;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-links a:hover{
+  background-color: #b8b8b8;
+}
+.fa-facebook-f{
+  color: #5007fa;
+}
+.fa-twitter{
+  color: #2606c7;
+}
+.fa-youtube{
+  color: #c71606;
+}
+/* contact Section start*/
+.contact-form-container{
+  background-image: url("../images/page-banners/contact-banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+.contact-form{
+  width: 80%;
+  height:70vh;
+  margin: auto;
+  margin-top: 30px;
+  padding: 15px;
+}
+.contact-form h5{
+  text-align: center;
+  color: rgb(26, 9, 32);
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #84BB45;
+  width: 35%;
+  padding: 20px 2px;
+  margin: auto;
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 1px 1px 3px rgb(153, 152, 152);
+}
+.contact-form form{
+  width: 35%;
+  height: 80%;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 1px 1px 3px rgb(153, 152, 152);
+}
+
+.contact-form form .form-control{
+  width: 100%;
+  margin-bottom: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+}
+.contact-form form .form-control input{
+  text-align: center;
+  border: 1px solid rgb(146, 146, 146);
+}
+.contact-form form .form-control input, .contact-form form .form-control textarea{
+  width: 100%;
+  margin: 10px auto;
+  height: 35px;
+}
+.contact-form form .form-control textarea{
+  height: 100px;
+  padding: 3px 10px;
+}
+.contact-form form #contact_btn{
+  font-size: 20px;
+  border-radius: 2px;
+  padding: 3px 7px;
+  background-color: #84BB45;
+
+}
+.contact-form form #contact_btn:hover{
+  cursor: pointer;
+  font-size: 20px;
+  background-color: rgb(44, 156, 91);
+
+}
+.contact-form form .form-control input::placeholder, .contact-form form .form-control textarea::placeholder{
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* contact Section end*/
+/* about us section start */
+.about-content{
+  min-height: 70vh;
+  background-image: url("../images/page-banners/about-banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* about us section end */
+
+/* Login Registratino Section Start */
+#member_registration{
+  width: 80%;
+  height: 90vh;
+  margin: 0 auto;
+}
+.login{
+  background-image: url("../images/page-banners/signin-banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 100%;
+  padding-top: 30px;
+  height: 90vh;
+
+}
+#member_registration{
+  background-image: url("../images/page-banners/signin-banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 100%;
+  padding-top: 10px;
+}
+#member_registration form{
+  height: 98%;
+  width: 28%;
+  padding: 10px;
+  margin: auto;
+  background-color: rgba(44, 44, 44, 0.829);
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 1px 1px 3px rgb(153, 152, 152);
+
+}
+.login form{
+  height: 50%;
+  width: 28%;
+  padding: 10px;
+  margin: auto;
+  background-color: rgba(44, 44, 44, 0.829);
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 1px 1px 3px rgb(153, 152, 152);
+
+}
+#member_registration form h5, .login form h5{
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color: #111;
+  background-color: #84BB45;
+
+}
+#member_registration form .form-control, .login form .form-control{
+  width: 100%;
+  margin:  5px auto;
+}
+#member_registration form .form-control:first-child, .login form .form-control:first-child{
+  margin-top: 5px;
+
+}
+#member_registration form .form-control label, .login form .form-control label{
+  cursor: pointer;
+  margin-left: 5%;
+  color: #f1f1f1;
+}
+#member_registration form .form-control label, .login form .form-control label,
+#member_registration form .form-control input,
+.login form .form-control input,
+#member_registration form .form-control p {
+  display: block;
+
+}
+#member_registration form p, .login form p{
+  margin-left: 5%;
+  color: #f1f1f1;
+}
+#member_registration form p a,
+.login form p a{
+  color: #f1f1f1;
+  margin-left: 7px;
+  font-size: 20px;
+}
+#member_registration form p a:hover,
+.login form p a:hover{
+  
+  padding-bottom: 2px;
+  border-bottom: 1px solid #f1f1f1;
+}
+#member_registration form .form-control input, .login form .form-control input{
+  width: 90%;
+  height: 30px;
+  margin: 8px auto;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 3px;
+  font-size: 18px;
+}
+#member_registration form .form-control textarea{
+  width: 90%;
+  height: 100px;
+  margin: 8px 5% 8px 5%;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+#member_registration form input[type="submit"], .login form input[type="submit"]{
+  cursor: pointer;
+  background-color: #84BB45;
+  margin-top: 10px;
+  margin-bottom: 7px;
+ 
+}
+#member_registration form input[type="submit"]:hover,
+.login form input[type="submit"]:hover{
+  background-color: rgb(44, 156, 91);
+ 
+}
+#login_popup form{
+  height: 50%;
+  width: 24%;
+  margin: 130px auto;
+}
+
+
+
+/* Login Registration Section End */
+
+/* book detail starts */
+.book-detail{
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+.book-detail > div{
+  border: 1px solid rgb(97, 96, 96);
+  box-shadow: 2px 2px 3px rgb(97,96,96);
+  min-height: 30vw;
+  padding: 25px 15px;
+
+}
+.book-detail .img_button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.book-detail .img_button img{
+  width: 60%;
+  height: 360px;
+  margin-bottom: 20px;
+}
+.book-detail .img_button a{
+  padding: 4px 8px;
+  color: #111;
+  background-color: #84BB45;
+  border: 1px solid rgb(97, 96, 96);
+  box-shadow: 3px 3px 4px rgb(97,96,96);
+  border-radius: 4px;
+  font-size: 20px;
+}
+.book-detail .img_button a:hover{
+
+  background-color: #53e26b;
+ 
+}
+.book-detail + a{
+  padding: 4px 8px;
+  color: #111;
+  background-color: #84BB45;
+  border: 1px solid rgb(97, 96, 96);
+  box-shadow: 3px 3px 4px rgb(97,96,96);
+  border-radius: 4px;
+  font-size: 20px;
+  display: block;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.book-detail + a:hover{
+  background-color: #53e26b;
+}
+
+/* book detail ends */
+
+/* Event Page Start */
+.events{
+  width: 80%;
+  padding: 10px;
+  margin: auto;
+}
+.event{
+  width: 100%;
+  background-color: rgb(248, 248, 248);
+  border-bottom: 2px solid rgb(211, 211, 211);
+  border-top: 2px solid rgb(211, 211, 211);
+  padding-top: 5px;
+  margin: 20px;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  font-size: 18px;
+  line-height: 1.4;
+  transition: 0.5s;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+.event:hover{
+  border-right: 2px solid rgb(211, 211, 211);
+  border-left: 2px solid rgb(211, 211, 211);
+}
+.event-image_description{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+.event > a h3{
+  font-size: 22px;
+  font-weight: 500;
+  color:#0C6DFF;
+}
+.event > a h3:hover{
+  color:#0350c2;
+}
+.grid-item{
+  height: 300px;
+  padding: 5px;
+}
+.grid-item p + a{
+  height: 30px;
+  padding: 4px 5px;
+  font-size: 18px;
+  color:#0C6DFF;
+  transition: 0.7s;
+  margin-top: 7px;
+}
+.grid-item p + a .fas{
+  transition: 0.7s;
+}
+.grid-item p + a:hover .fas{
+  font-size: 20px;
+  margin-left: 4px;
+}
+.grid-item img{
+  height: 100%;
+  width: 100%;
+}
+/* Event Page End */
+/* Single event detail starts */
+.single-event-detail h3{
+  font-size: 24px;
+  color: #0C6DFF;
+  margin-bottom: 35px;
+
+}
+.single-event-detail > div{
+  min-height: 40vh;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 3fr 2fr;
+}
+.single-event-detail > div p{
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+.single-event-detail > div img{
+  width: 100%;
+  height: 90%;
+}
+/* Single Event detail ends */
+/* Admin Dashboard Start */
+.dashboard-content{
+  display: flex;
+  justify-content: center;
+  column-gap: 2%;
+}
+.dashboard-item{
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  font-size: 20px;
+  color: rgb(5, 7, 6);
+  background-color: #fff;
+  border: transparent;
+  border-radius: 15px;
+}
+.dashboard-item a{
+  color: rgb(5, 7, 6);
+}
+.dashboard-item h3:last-child{
+  margin-top: 15px;
+  color: #84BB45;
+}
+/* Admin Dashboard End */
+/* Admin-login start */
+#login_popup{
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.692);
+  position: absolute;
+  height: 100vh;
+  width:100vw;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+/* Admin login end */
+/* Add book form start */
+.form-container > form{
+  width: 80%;
+  height:80vh;
+  margin: auto;
+  margin-top: 30px;
+  padding: 5px;
+}
+.form-container > form h2{
+  text-align: center;
+  padding-left: 90px;
+  
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.form-container > form .form-control{
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  margin-bottom: 30px;
+
+}
+
+.form-container > form .form-control:last-child button:hover{
+  background-color: rgb(44, 156, 91);
+  color: rgb(230, 221, 221);
+}
+.form-container > form .form-control label{
+  font-size: 18px;
+}
+.form-container > form .form-control input[type=text],
+.form-container > form .form-control input[type=email],
+.form-container > form .form-control input[type=password],
+.form-control > form .form-control select{
+  height: 30px;
+}
+.form-container > form .form-control textarea{
+  max-height: 300px;
+  min-height: 140px;
+}
+.form-container > form .form-control:last-child{
+  width: 70%;
+  margin-left: 338px;
+  height:30px;
+
+}
+.form-container > form .form-control:last-child button{
+  width: 100%;
+  height: 100%;
+  border: transparent;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 3px 6px;
+  transition: 0.6s;
+  background-color: #84BB45;
+  color: #fff;
+}
+/* Add book form end */
+/* Member Table start  and account page*/
+.account{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.account-sidebar ul{
+  padding: 5%;
+  width: 90%;
+  background-color: #fff;
+  height: 200px;
+
+}
+.account-sidebar ul li{
+  font-size: 20px;
+  padding: 2px 3px;
+  
+  cursor: pointer;
+  width: 90%;
+  margin: 3px auto;
+  margin-bottom: 20px;
+  background-color: #ececec;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: 0.7s;
+
+}
+.account-sidebar ul li:hover{
+  border: 1px solid #b1b0b0;
+  box-shadow: 2px 2p 3px #b1b0b0;
+}
+
+#account-content{
+  min-height: 40vh;
+}
+#account-content > div{
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+}
+#account-content > div p{
+  font-size: 18px;
+  line-height: 1.6;
+
+}
+#account-content > div p span{
+  font-size: 20px;
+  font-weight: 500;
+  padding-right: 15px;
+  color: #84BB45;
+
+}
+#editaccount{
+  cursor: pointer;
+  margin-left: 15px;
+  color: #fff;
+  border: 1px solid #3c5f15;
+  background-color: #84BB45;
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 20px;
+}
+#account_details{
+  display: none;
+}
+
+.member-table-container > table,#account-content table{
+  border: 2px solid rgb(71, 71, 71);
+}
+.member-table-container > table tr:nth-child(even),#account-content table tr:nth-child(even){
+ background-color: rgb(221, 221, 218);
+}  
+.member-table-container > table th,
+#account-content table th,
+.member-table-container > table td,
+#account-content table td{
+  border: 2px solid rgb(71, 71, 71);
+}
+.member-table-container > th,
+#account-content th,
+.member-table-container > td,
+#account-content table td
+{
+  padding: 2px 5px;
+}
+.member-table-container > table,
+#account-content table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.member-table-container > table thead,
+#account-content table thead{
+  height: 45px;
+  background-color: #84BB45;
+  color: #fff;
+  font-size: 20px;
+}
+.member-table-container > table tr,
+#account-content table tr{
+height: 45px;
+}
+.member-table-container > table td,
+#account-content table td{
+  text-align: center;
+}
+.member-table-container select{
+  height: 25px;
+  width: 110px;
+  margin-bottom: 20px;
+}
+/* Member Table End */
+
+
+/* Account Edit PopUp */
+#accountEditPopUp{
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 800;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(32, 32, 32, 0.664);
+}
+#accountEditPopUp > div{
+  box-shadow: 3px 3px 4px rgb(192, 150, 150);
+  border: 2px solid rgb(192, 150, 150);
+  padding: 50px;
+  background-color: #f7e2e0;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+#accountEditPopUp > div > div span{
+  height: 25px;
+  padding: 5px 10px;
+  width: 40px;
+  font-size: 32px;
+  color: rgb(221, 10, 10);
+  transition: 0.7s;
+}
+#accountEditPopUp > div > div span:hover{
+  
+  color: rgb(219, 20, 20);
+  background-color: #fdfbfb;
+  cursor: pointer;
+}
+#accountEditPopUp > div h3{
+  color: #84BB45;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 25px;
+}
+#accountEditPopUp > div form{
+  color: rgb(19, 18, 18);
+  width: 100%;
+  padding-left: 52px;
+}
+#accountEditPopUp > div form .form-control{
+  width: 100%;
+  margin-bottom: 20px;
+
+}
+#accountEditPopUp > div form .form-control label{
+  margin-right: 5%;
+  display: block;
+  margin-bottom: 3px;
+  width: 12%;
+
+}
+#accountEditPopUp > div form .form-control:nth-child(4) label{
+  margin-top: 0;
+}
+#accountEditPopUp > div form .form-control input{
+  height: 25px;
+  font-size: 14px;
+  width: 83%;
+}
+#accountEditPopUp > div form textarea{
+  height: 75px;
+  font-size: 14px;
+  width: 83%;
+}
+#accountEditPopUp > div form .form-control button{
+  padding: 2px 16px;
+  font-size: 16px;
+  background-color: #72be1a;
+  color: #fff;
+  border: 1px solid #436916;
+  border-radius: 3px;
+  transition: 0.7s;
+}
+#accountEditPopUp > div form .form-control button:hover{
+  background-color: #529208;
+  cursor: pointer;
+}
+
+
+
+
