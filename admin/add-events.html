@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="container header" id="admin_header">
+        <div class="logo-section">
+            <a href="dashboard.html"><img src="../images/libraria-logo-v2.png"></a>
+        </div>
+        <div class="nav-wrapper">
+            <div class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+
+                    <li><a href="add-moderator.html">Add Moderator</a></li>
+
+                    <li><a href="add-book.html">Add Book</a></li>
+                    <li><a href="add-category.html">Add Category</a></li>
+                    <li><a href="add-author.html">Add Author</a></li>
+                    <li><a href="add-events.html">Publish Event</a></li>
+                    <li><a href="members.html">All Members</a></li>
+                    <li><a href="index.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <main class="container form-container">
+
+        <form action="">
+            <h2>Please Fill The Following Input Fields</h2>
+            <div class="form-control">
+                <label for="event_title">Event Title</label><input type="text" id="event_title" name="event_title">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label><textarea name="description" id="description"></textarea>
+            </div>
+            <div class="form-control">
+                <label for="eventimage">Event Image</label><input type="file" id="eventimage" name="eventimage"
+                    size="90">
+            </div>
+            <div class="form-control">
+                <button type="submit" name="publishevent">Publish Event</button>
+            </div>
+        </form>
+
+    </main>
+</body>
+
+</html>
