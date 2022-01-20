@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome To Samir's Library</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fontawesome CDN -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="container header">
+        <div class="logo-section">
+            <a href="index.html"><img src="images/libraria-logo-v2.png"></a>
+        </div>
+        <div class="nav-wrapper">
+            <div class="top-nav">
+                <p class="top-nav-item"><span><i class="fas fa-phone-alt"></i></span>01889330443</p>
+                <div class="top-nav-item">
+                    <form>
+                        <input type="text" name="item-search" placeholder="Search: Book Name, Author Name">
+                        <button>Search</button>
+                    </form>
+                </div>
+                <div class="top-nav-item"><a href="login.html">Login</a><a href="registration.html">Registration</a>
+                    <a href="account.html">Account</a>
+                </div>
+
+            </div>
+            <div class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="catalogue.html">Browse Catalogue</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="events.html">Events & News</a></li>
+
+
+
+                </ul>
+            </div>
+        </div>
+
+    </header>
+    <main class="container account">
+        <div class="account-sidebar">
+            <ul>
+                <li id="account_details_tab" onclick="show_account_sec()">Account Details</li>
+                <li id="borrow_details_tab" onclick="show_borrow_sec()">Borrow Details</li>
+            </ul>
+        </div>
+        <div id="account-content">
+            <table id="borrow_details">
+                <thead>
+                    <tr>
+                        <td>Book Name</td>
+                        <td>Date of Issue</td>
+                        <td>Date to be Returned</td>
+                        <td>Penalised</td>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Samir Kumar Roy</td>
+                        <td>2 second jan, 2022</td>
+                        <td>12th jan, 2022</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Prapte Sarker</td>
+
+                        <td>2 second jan, 2022</td>
+                        <td>12th jan, 2022</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Subha Bhattacharjee</td>
+
+                        <td>2 second jan, 2022</td>
+                        <td>12th jan, 2022</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Upoma Roy</td>
+
+                        <td>2 second jan, 2022</td>
+                        <td>12th jan, 2022</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="account_details">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Email</td>
+                                <td>Mobile</td>
+                                <td>Address</td>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Samir Kumar Roy</td>
+                                <td>samirroy594@gmail.com</td>
+                                <td>01312253034</td>
+                                <td>27/3 Girls' School Road,<br>Savar, Dhaka</td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <button id="editaccount" onclick="show_edit_popup()">Edit</button>
+
+
+            </div>
+        </div>
+        <div id="accountEditPopUp">
+            <div>
+                <div><span id="editpopupcross" onclick="close_edit_popup()"><i class="fas fa-times"></i></span></div>
+                <h3>Edit Your Account Info</h3>
+                <form action="">
+                    <div class="form-control">
+                        <label for="name">Name</label><input type="text" id="name" name="" value="Samir Kumar Roy">
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email</label><input type="email" id="email" name=""
+                            value="samirroy594@gmail.com">
+                    </div>
+                    <div class="form-control">
+                        <label for="mobile">Mobile</label><input type="number" id="mobile" name="" value="01312253034">
+                    </div>
+                    <div class="form-control">
+                        <label for="address">Address</label><textarea name="" id="address" cols="30"
+                            rows="10">27/3 Girls' School Road, Savar, Dhaka</textarea>
+                    </div>
+                    <div class="form-control">
+                        <button type="submit" name="saveaccount">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="container">
+        <div class="footer-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogue.html">Browse Catalogue</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="events.html">Events & Programms</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="rules-policy.html">Rules & Policy</a></li>
+
+
+            </ul>
+            <div class="social-links">
+                <h3>Our Social Media Presence</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </footer>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
